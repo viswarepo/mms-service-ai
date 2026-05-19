@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mms-service-service
+spec:
+  selector:
+    app: mms-service
+  ports:
+    - protocol: TCP
+      port: 9090         # Port exposed by the service
+      targetPort: 9090 # Port the application is running on
+  type: LoadBalancer   # Use 'NodePort' for local development like Minikube
